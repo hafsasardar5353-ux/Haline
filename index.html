@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haline | Content Writer & SEO Content</title>
+  <meta name="description" content="Haline creates clear, engaging and search-aware content including SEO articles, website copy, product descriptions and content research.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Haline">
+  <link rel="canonical" href="YOUR_WEBSITE_URL">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Haline | Content Writer & SEO Article Writer">
+  <meta property="og:description" content="Clear, engaging and search-aware content that helps brands communicate with confidence.">
+  <meta property="og:url" content="YOUR_WEBSITE_URL">
+  <meta property="og:image" content="YOUR_OG_IMAGE_URL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Haline | Content Writer & SEO Article Writer">
+  <meta name="twitter:description" content="Clear, engaging and search-aware content for modern brands.">
+  <meta name="twitter:image" content="YOUR_OG_IMAGE_URL">
+
+  <!-- Inline SVG favicon: no extra file required. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232f4f3d'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='34' font-weight='700' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+
+  <style>
+    /* =========================================================
+       HALINE — PREMIUM SAGE EDITORIAL SYSTEM
+       All styles live in this single file.
+       ========================================================= */
+    :root{
+      --primary:#294238;
+      --primary-2:#3f5d4c;
+      --accent:#718a78;
+      --accent-soft:#e5ebe6;
+      --background:#f6f5f0;
+      --surface:#ffffff;
+      --surface-2:#edf1ed;
+      --text:#18201b;
+      --muted:#69736c;
+      --border:#dfe3de;
+      --sage:#718a78;
+      --sage-dark:#3f5d4c;
+      --danger:#a34e4e;
+      --success:#35654a;
+      --shadow:0 22px 60px rgba(30,48,38,.10);
+      --shadow-soft:0 10px 30px rgba(30,48,38,.07);
+      --radius:22px;
+      --radius-sm:13px;
+      --container:min(1180px, calc(100% - 40px));
+      --header-h:78px;
+      --serif:Georgia, "Times New Roman", serif;
+      --sans:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html[data-theme="dark"]{
+      --primary:#dce8df;
+      --primary-2:#a9c1b0;
+      --accent:#9eb8a5;
+      --accent-soft:#28382e;
+      --background:#111713;
+      --surface:#18201b;
+      --surface-2:#202b24;
+      --text:#edf2ee;
+      --muted:#aab5ae;
+      --border:#303b34;
+      --sage:#91ad99;
+      --sage-dark:#b7cfbd;
+      --danger:#e49a9a;
+      --success:#9ad0ad;
+      --shadow:0 22px 60px rgba(0,0,0,.28);
+      --shadow-soft:0 10px 30px rgba(0,0,0,.20);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-width:320px;
+      background:var(--background);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.65;
+      overflow-x:hidden;
+      transition:background .3s ease,color .3s ease;
+    }
+    body.modal-open{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+    ::selection{background:var(--accent-soft);color:var(--primary)}
+
+    .container{width:var(--container);margin-inline:auto}
+    .section{padding:110px 0;position:relative}
+    .section-tight{padding:76px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      color:var(--accent);font-size:.76rem;font-weight:800;
+      letter-spacing:.16em;text-transform:uppercase;
+    }
+    .eyebrow::before{content:"";width:30px;height:1px;background:currentColor}
+    .section-heading{max-width:760px;margin-bottom:48px}
+    .section-heading h2{
+      margin:14px 0 0;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:clamp(2.3rem,5vw,4.3rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+    }
+    .section-heading p{color:var(--muted);max-width:650px;margin:20px 0 0;font-size:1.03rem}
+    .sr-only{
+      position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+      margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+      white-space:nowrap!important;border:0!important;
+    }
+
+    /* =========================================================
+       HEADER / NAVIGATION
+       ========================================================= */
+    .site-header{
+      position:sticky;top:0;z-index:1000;height:var(--header-h);
+      border-bottom:1px solid transparent;
+      background:color-mix(in srgb,var(--background) 88%,transparent);
+      backdrop-filter:blur(14px);
+      transition:box-shadow .25s ease,border-color .25s ease,background .25s ease;
+    }
+    .site-header.scrolled{
+      border-color:var(--border);
+      box-shadow:0 8px 30px rgba(25,40,31,.07);
+    }
+    .nav{
+      height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{display:inline-flex;align-items:center;min-width:150px}
+    .brand img{width:145px;height:auto}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{
+      font-size:.88rem;font-weight:700;color:var(--muted);
+      transition:color .2s ease;
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-actions{display:flex;align-items:center;gap:9px}
+    .icon-btn,.menu-toggle{
+      width:42px;height:42px;border:1px solid var(--border);border-radius:50%;
+      background:var(--surface);color:var(--text);display:grid;place-items:center;
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+    }
+    .icon-btn:hover,.menu-toggle:hover{transform:translateY(-2px);border-color:var(--accent)}
+    .icon-btn svg,.menu-toggle svg{width:18px;height:18px}
+    .menu-toggle{display:none;border-radius:12px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:0 20px;border-radius:999px;border:1px solid transparent;
+      font-weight:800;font-size:.86rem;letter-spacing:.01em;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--primary);color:var(--background);box-shadow:0 10px 22px rgba(36,56,45,.15)}
+    .btn-primary:hover{box-shadow:0 14px 30px rgba(36,56,45,.22)}
+    .btn-outline{background:transparent;color:var(--text);border-color:var(--border)}
+    .btn-outline:hover{border-color:var(--accent);background:var(--surface)}
+    .btn-soft{background:var(--accent-soft);color:var(--primary)}
+    .mobile-menu{
+      display:none;
+      border-top:1px solid var(--border);
+      padding:15px 20px 22px;background:var(--background);
+    }
+    .mobile-menu a{display:block;padding:12px 0;font-weight:750;color:var(--muted)}
+    .mobile-menu .btn{width:100%;margin-top:10px}
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero{padding:100px 0 80px;min-height:calc(100vh - var(--header-h));display:grid;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+    .hero h1{
+      font-family:var(--serif);font-weight:500;
+      font-size:clamp(3.6rem,7.2vw,7rem);
+      line-height:.94;letter-spacing:-.055em;margin:20px 0 25px;
+      max-width:850px;
+    }
+    .hero h1 span{color:var(--accent)}
+    .hero-copy{font-size:1.08rem;color:var(--muted);max-width:650px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .credibility{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+    .credibility span{
+      padding:8px 12px;border:1px solid var(--border);border-radius:999px;
+      font-size:.75rem;font-weight:800;color:var(--muted);background:var(--surface);
+    }
+    .hero-visual{position:relative;min-height:500px;display:grid;place-items:center}
+    .editorial-orbit{
+      width:min(460px,100%);aspect-ratio:1;
+      border:1px solid var(--border);border-radius:50%;
+      position:relative;background:radial-gradient(circle at 50% 45%,var(--accent-soft),transparent 55%);
+    }
+    .editorial-orbit::before,.editorial-orbit::after{
+      content:"";position:absolute;border:1px solid var(--border);border-radius:50%;
+    }
+    .editorial-orbit::before{inset:11%;border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+    .editorial-orbit::after{inset:23%;border-style:dashed}
+    .hero-logo-card{
+      position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+      width:70%;aspect-ratio:1;border-radius:32px;background:var(--surface);
+      border:1px solid var(--border);box-shadow:var(--shadow);
+      display:grid;place-items:center;padding:30px;
+    }
+    .hero-logo-card img{width:90%;max-width:330px}
+    .floating-note{
+      position:absolute;padding:15px 18px;border:1px solid var(--border);
+      border-radius:16px;background:var(--surface);box-shadow:var(--shadow-soft);
+      font-size:.78rem;font-weight:800;letter-spacing:.04em;
+    }
+    .floating-note.one{left:0;top:17%}
+    .floating-note.two{right:0;bottom:17%}
+    .floating-note small{display:block;color:var(--muted);font-weight:600;margin-top:3px}
+
+    /* =========================================================
+       TRUST STRIP
+       ========================================================= */
+    .trust-strip{border-block:1px solid var(--border);overflow:hidden}
+    .trust-track{display:grid;grid-template-columns:repeat(5,1fr)}
+    .trust-item{
+      min-height:82px;display:grid;place-items:center;text-align:center;
+      padding:18px;border-right:1px solid var(--border);
+      font-size:.72rem;font-weight:900;letter-spacing:.16em;color:var(--muted);
+    }
+    .trust-item:last-child{border-right:0}
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+    .about-lead{
+      font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);
+      line-height:1.1;margin:0;letter-spacing:-.03em
+    }
+    .about-body{color:var(--muted);font-size:1.02rem}
+    .about-extra{display:none;margin-top:24px}
+    .about-extra.open{display:block}
+    .about-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0}
+    .about-point{padding:17px 18px;border:1px solid var(--border);border-radius:15px;background:var(--surface)}
+    .about-point strong{display:block;margin-bottom:5px}
+    .about-point span{color:var(--muted);font-size:.88rem}
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service-card{
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+      padding:27px;min-height:320px;display:flex;flex-direction:column;
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:color-mix(in srgb,var(--accent) 55%,var(--border))}
+    .service-number{font-size:.72rem;font-weight:900;letter-spacing:.14em;color:var(--accent)}
+    .service-icon{
+      width:48px;height:48px;border-radius:14px;background:var(--accent-soft);
+      display:grid;place-items:center;margin:25px 0 20px;color:var(--primary)
+    }
+    .service-icon svg{width:22px;height:22px}
+    .service-card h3{margin:0;font-family:var(--serif);font-size:1.55rem;font-weight:500}
+    .service-card p{color:var(--muted);font-size:.91rem;margin:10px 0 20px}
+    .text-btn{
+      margin-top:auto;border:0;background:transparent;padding:0;color:var(--primary);
+      font-weight:900;text-align:left;display:inline-flex;align-items:center;gap:7px;
+    }
+    .text-btn::after{content:"→";transition:transform .2s ease}
+    .text-btn:hover::after{transform:translateX(4px)}
+
+    /* =========================================================
+       PORTFOLIO
+       ========================================================= */
+    .portfolio-toolbar{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:25px;flex-wrap:wrap}
+    .filters{display:flex;flex-wrap:wrap;gap:8px}
+    .filter-btn{
+      border:1px solid var(--border);background:transparent;color:var(--muted);
+      border-radius:999px;padding:9px 14px;font-size:.78rem;font-weight:800;
+      transition:.2s ease;
+    }
+    .filter-btn:hover,.filter-btn.active{background:var(--primary);color:var(--background);border-color:var(--primary)}
+    .search-field{position:relative;min-width:min(340px,100%)}
+    .search-field input{
+      width:100%;height:44px;border:1px solid var(--border);border-radius:999px;
+      background:var(--surface);color:var(--text);padding:0 18px 0 42px;
+    }
+    .search-field svg{position:absolute;left:16px;top:13px;width:18px;color:var(--muted)}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .portfolio-card{
+      border:1px solid var(--border);background:var(--surface);border-radius:var(--radius);
+      overflow:hidden;display:flex;flex-direction:column;min-height:390px;
+      transition:transform .25s ease,opacity .2s ease,box-shadow .25s ease;
+    }
+    .portfolio-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft)}
+    .portfolio-cover{
+      min-height:160px;background:
+        linear-gradient(135deg,var(--accent-soft),transparent),
+        repeating-linear-gradient(0deg,transparent 0 24px,color-mix(in srgb,var(--accent) 9%,transparent) 25px);
+      display:flex;align-items:flex-end;padding:22px;border-bottom:1px solid var(--border);
+    }
+    .portfolio-label{font-size:.68rem;font-weight:900;letter-spacing:.13em;color:var(--accent)}
+    .portfolio-content{padding:23px;display:flex;flex-direction:column;flex:1}
+    .portfolio-content h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;line-height:1.1;margin:9px 0}
+    .portfolio-content p{color:var(--muted);font-size:.88rem;margin:0 0 18px}
+    .portfolio-meta{font-size:.74rem;color:var(--muted);margin-top:auto}
+    .portfolio-card.hidden{display:none}
+    .empty-state{
+      grid-column:1/-1;text-align:center;padding:60px 20px;border:1px dashed var(--border);
+      border-radius:var(--radius);color:var(--muted)
+    }
+
+    /* =========================================================
+       FEATURED ARTICLE
+       ========================================================= */
+    .featured{
+      background:var(--primary);color:var(--background);border-radius:32px;
+      padding:55px clamp(25px,6vw,75px);display:grid;grid-template-columns:1fr auto;
+      gap:50px;align-items:end;overflow:hidden;position:relative;
+    }
+    .featured::after{
+      content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.12);
+      border-radius:50%;right:-110px;top:-130px;
+    }
+    .featured .eyebrow{color:var(--accent)}
+    .featured h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.8rem);line-height:1.05;margin:15px 0}
+    .featured p{color:color-mix(in srgb,var(--background) 68%,transparent);max-width:700px}
+    .featured .btn-primary{background:var(--background);color:var(--primary)}
+    .featured-category{font-size:.75rem;font-weight:900;letter-spacing:.13em;color:var(--accent)}
+
+    /* =========================================================
+       WHY / PROCESS
+       ========================================================= */
+    .why-list{border-top:1px solid var(--border)}
+    .why-row{
+      display:grid;grid-template-columns:90px 1fr 1.2fr;gap:30px;padding:27px 0;
+      border-bottom:1px solid var(--border);align-items:center;
+    }
+    .why-num{font-size:.76rem;font-weight:900;color:var(--accent);letter-spacing:.12em}
+    .why-row h3{font-family:var(--serif);font-size:1.55rem;font-weight:500;margin:0}
+    .why-row p{margin:0;color:var(--muted);font-size:.9rem}
+    .process{background:var(--surface-2)}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .process-step{padding:30px 25px;border-right:1px solid var(--border);min-height:220px}
+    .process-step:last-child{border-right:0}
+    .process-step .num{font-size:.74rem;font-weight:900;letter-spacing:.13em;color:var(--accent)}
+    .process-step h3{font-family:var(--serif);font-size:1.8rem;font-weight:500;margin:25px 0 9px}
+    .process-step p{color:var(--muted);font-size:.88rem;margin:0}
+    .process-step.reveal{transform:translateY(20px);opacity:0}
+    .process-step.reveal.is-visible{transform:none;opacity:1;transition:opacity .6s ease,transform .6s ease}
+
+    /* =========================================================
+       TESTIMONIALS
+       ========================================================= */
+    .testimonial-wrap{max-width:820px;margin:auto;text-align:center}
+    .quote-mark{font-family:var(--serif);font-size:5rem;line-height:.5;color:var(--accent)}
+    .testimonial-text{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.25;margin:25px 0}
+    .testimonial-author{color:var(--muted);font-size:.85rem}
+    .slider-controls{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:28px}
+    .slider-btn{width:42px;height:42px;border:1px solid var(--border);background:var(--surface);border-radius:50%;color:var(--text)}
+    .dots{display:flex;gap:7px}
+    .dot{width:7px;height:7px;border:0;border-radius:50%;padding:0;background:var(--border)}
+    .dot.active{background:var(--accent)}
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+    .faq-list{max-width:900px;margin:auto;border-top:1px solid var(--border)}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{
+      width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;
+      border:0;background:transparent;color:var(--text);padding:24px 0;text-align:left;
+      font-weight:850;font-size:1rem;
+    }
+    .faq-plus{font-size:1.35rem;color:var(--accent);transition:transform .25s ease}
+    .faq-question[aria-expanded="true"] .faq-plus{transform:rotate(45deg)}
+    .faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+    .faq-answer > div{overflow:hidden}
+    .faq-answer p{color:var(--muted);margin:0 0 22px;max-width:760px}
+    .faq-item.open .faq-answer{grid-template-rows:1fr}
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+    .contact-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:70px;align-items:start}
+    .contact-copy h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.02;font-weight:500;letter-spacing:-.04em;margin:14px 0}
+    .contact-copy p{color:var(--muted);max-width:510px}
+    .contact-links{display:grid;gap:10px;margin-top:28px}
+    .contact-link{
+      display:flex;align-items:center;gap:13px;width:100%;padding:14px 15px;
+      border:1px solid var(--border);border-radius:15px;background:var(--surface);
+      color:var(--text);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease;
+    }
+    .contact-link:hover:not(:disabled){
+      transform:translateY(-2px);border-color:var(--accent);
+      box-shadow:var(--shadow-soft);background:var(--surface-2);
+    }
+    .contact-link svg{width:19px;height:19px;flex:none}
+    .contact-link strong{display:block;font-size:.86rem}
+    .contact-link small{display:block;color:var(--muted);font-size:.72rem;margin-top:1px}
+    .contact-link.disabled,.contact-link:disabled{opacity:.5;cursor:not-allowed}
+    .contact-link-copy{margin-left:auto;font-size:.68rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .contact-link{
+      display:flex;align-items:center;gap:12px;padding:14px 15px;border:1px solid var(--border);
+      border-radius:14px;background:var(--surface);font-weight:750;font-size:.88rem;
+    }
+    .contact-link svg{width:19px;color:var(--accent);flex:none}
+    .contact-form{
+      background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:30px;
+      box-shadow:var(--shadow-soft);
+    }
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.78rem;font-weight:850}
+    .field input,.field select,.field textarea{
+      width:100%;border:1px solid var(--border);background:var(--background);color:var(--text);
+      border-radius:13px;padding:12px 13px;min-height:47px;transition:border-color .2s ease,box-shadow .2s ease;
+    }
+    .field textarea{min-height:150px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);outline:none}
+    .field-error{min-height:17px;color:var(--danger);font-size:.73rem}
+    .form-status{margin-top:16px;padding:12px 14px;border-radius:12px;display:none;font-size:.83rem}
+    .form-status.show{display:block}
+    .form-status.error{background:color-mix(in srgb,var(--danger) 12%,transparent);color:var(--danger)}
+    .form-status.success{background:color-mix(in srgb,var(--success) 12%,transparent);color:var(--success)}
+    .form-status.info{background:var(--accent-soft);color:var(--primary)}
+    .form-note{color:var(--muted);font-size:.72rem;margin:12px 0 0}
+    .submit-row{display:flex;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap}
+
+    /* =========================================================
+       FOOTER / BACK TO TOP
+       ========================================================= */
+    footer{padding:65px 0 30px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px}
+    .footer-brand img{width:145px}
+    .footer-brand p{color:var(--muted);max-width:330px;font-size:.88rem}
+    .footer-title{font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--accent);margin-bottom:14px}
+    .footer-links{display:grid;gap:9px}
+    .footer-links a{font-size:.86rem;color:var(--muted)}
+    .footer-links a:hover{color:var(--text)}
+    .socials{display:flex;gap:8px;flex-wrap:wrap}
+    .social{
+      width:39px;height:39px;display:grid;place-items:center;border:1px solid var(--border);
+      border-radius:50%;background:var(--surface);color:var(--text)
+    }
+    .social svg{width:16px;height:16px}
+    .footer-bottom{margin-top:45px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.75rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #backTop{
+      position:fixed;right:22px;bottom:22px;z-index:900;width:45px;height:45px;border:1px solid var(--border);
+      background:var(--primary);color:var(--background);border-radius:50%;display:grid;place-items:center;
+      opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s ease;box-shadow:var(--shadow-soft)
+    }
+    #backTop.visible{opacity:1;pointer-events:auto;transform:none}
+    #backTop svg{width:18px}
+
+    /* =========================================================
+       MODALS / SEARCH
+       ========================================================= */
+    .modal{
+      position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:20px;
+      background:rgba(12,19,15,.64);opacity:0;pointer-events:none;transition:opacity .25s ease;
+    }
+    .modal.open{opacity:1;pointer-events:auto}
+    .modal-panel{
+      width:min(850px,100%);max-height:min(88vh,900px);overflow:auto;
+      background:var(--surface);color:var(--text);border:1px solid var(--border);
+      border-radius:28px;box-shadow:var(--shadow);transform:translateY(12px) scale(.98);
+      transition:transform .25s ease;position:relative;
+    }
+    .modal.open .modal-panel{transform:none}
+    .modal-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:30px 30px 15px}
+    .modal-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.1rem);font-weight:500;line-height:1.05;margin:10px 0 0}
+    .close-btn{width:40px;height:40px;border:1px solid var(--border);background:var(--background);border-radius:50%;color:var(--text);flex:none}
+    .modal-body{padding:15px 30px 30px;color:var(--muted)}
+    .modal-body h3{color:var(--text);font-family:var(--serif);font-weight:500;margin-top:26px}
+    .modal-body ul{padding-left:20px}
+    .modal-body li{margin:6px 0}
+    .modal-actions{padding:0 30px 30px;display:flex;gap:10px;flex-wrap:wrap}
+    .sample-content{color:var(--text)}
+    .sample-content p{color:var(--muted)}
+    .sample-content h3{font-family:var(--serif);font-weight:500;color:var(--text);font-size:1.5rem}
+    .search-panel{width:min(920px,100%);padding:30px}
+    .search-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .search-head h2{font-family:var(--serif);font-weight:500;margin:0;font-size:2.1rem}
+    .search-input-wrap{position:relative;margin:24px 0}
+    .search-input-wrap svg{position:absolute;left:17px;top:16px;width:20px;color:var(--muted)}
+    #globalSearchInput{width:100%;height:55px;border:1px solid var(--border);border-radius:15px;background:var(--background);color:var(--text);padding:0 18px 0 50px}
+    .global-results{display:grid;gap:8px;max-height:52vh;overflow:auto}
+    .result-item{
+      display:grid;grid-template-columns:auto 1fr;gap:14px;padding:15px;border:1px solid var(--border);
+      border-radius:15px;background:var(--surface);text-align:left;
+    }
+    .result-icon{width:40px;height:40px;border-radius:11px;background:var(--accent-soft);display:grid;place-items:center;color:var(--primary)}
+    .result-icon svg{width:17px}
+    .result-item strong{display:block}
+    .result-item small{display:block;color:var(--accent);font-weight:800;font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;margin:2px 0 4px}
+    .result-item span{color:var(--muted);font-size:.8rem}
+    .no-results{text-align:center;color:var(--muted);padding:35px}
+
+    /* =========================================================
+       SCROLL REVEALS
+       ========================================================= */
+    .reveal{opacity:0;transform:translateY(18px)}
+    .reveal.is-visible{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+    .stagger > *{opacity:0;transform:translateY(12px)}
+    .stagger.is-visible > *{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
+    .stagger.is-visible > *:nth-child(2){transition-delay:.06s}
+    .stagger.is-visible > *:nth-child(3){transition-delay:.12s}
+    .stagger.is-visible > *:nth-child(4){transition-delay:.18s}
+    .stagger.is-visible > *:nth-child(5){transition-delay:.24s}
+    .stagger.is-visible > *:nth-child(6){transition-delay:.30s}
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width:1080px){
+      .nav-links{gap:18px}
+      .nav-actions .btn{display:none}
+      .hero-grid{gap:45px}
+      .services-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{gap:45px}
+    }
+    @media (max-width:820px){
+      :root{--container:min(100% - 32px, 680px)}
+      .section{padding:80px 0}
+      .nav-links{display:none}
+      .menu-toggle{display:grid}
+      .mobile-menu.open{display:block}
+      .hero{padding:75px 0 65px}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:390px}
+      .hero h1{font-size:clamp(3.1rem,12vw,5.5rem)}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .trust-track{grid-template-columns:repeat(2,1fr)}
+      .trust-item:nth-child(2n){border-right:0}
+      .trust-item:last-child{grid-column:1/-1;border-top:1px solid var(--border)}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .process-step:nth-child(2){border-right:0}
+      .process-step:nth-child(3),.process-step:nth-child(4){border-top:1px solid var(--border)}
+      .why-row{grid-template-columns:55px 1fr}
+      .why-row p{grid-column:2}
+      .featured{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      :root{--container:calc(100% - 28px)}
+      .section{padding:68px 0}
+      .brand img{width:124px}
+      .hero{padding-top:55px}
+      .hero h1{font-size:clamp(2.8rem,15vw,4.6rem)}
+      .hero-actions .btn{width:100%}
+      .hero-visual{min-height:330px}
+      .editorial-orbit{width:300px}
+      .floating-note{font-size:.68rem;padding:10px 12px}
+      .floating-note.one{left:-2px}
+      .floating-note.two{right:-2px}
+      .services-grid,.portfolio-grid{grid-template-columns:1fr}
+      .about-points{grid-template-columns:1fr}
+      .portfolio-toolbar{align-items:stretch}
+      .filters{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}
+      .filter-btn{white-space:nowrap}
+      .search-field{min-width:100%}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .contact-form{padding:20px}
+      .featured{padding:35px 22px}
+      .process-grid{grid-template-columns:1fr}
+      .process-step,.process-step:nth-child(2),.process-step:nth-child(3){border-right:0;border-bottom:1px solid var(--border)}
+      .process-step:last-child{border-bottom:0}
+      .why-row{grid-template-columns:45px 1fr}
+      .why-row h3{font-size:1.35rem}
+      .footer-grid{grid-template-columns:1fr}
+      .modal{padding:10px}
+      .modal-panel{border-radius:21px;max-height:94vh}
+      .modal-header{padding:22px 20px 10px}
+      .modal-body{padding:10px 20px 22px}
+      .modal-actions{padding:0 20px 22px}
+      .search-panel{padding:20px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+      .reveal,.stagger > *, .process-step.reveal{opacity:1!important;transform:none!important}
+    }
+  </style>
+
+  <!-- JSON-LD. Replace placeholders in SITE_CONFIG when publishing. -->
+  <script type="application/ld+json" id="structuredData">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Haline",
+    "url":"YOUR_WEBSITE_URL",
+    "email":"YOUR_EMAIL@example.com",
+    "jobTitle":"Content Writer & SEO Article Writer",
+    "sameAs":[]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- =========================================================
+       SVG ICON SPRITE
+       ========================================================= -->
+  <svg aria-hidden="true" class="sr-only">
+    <defs>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.4 15.1A8.6 8.6 0 0 1 8.9 3.6 8.7 8.7 0 1 0 20.4 15.1Z"></path></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"></path></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="m4 20 4.2-1 10.7-10.7a2.1 2.1 0 0 0-3-3L5.2 16 4 20Z"></path><path d="m13.8 6.2 4 4"></path></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"></path><path d="m4 7.5 8 4.5 8-4.5M12 12v9"></path></symbol>
+      <symbol id="i-search-doc" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="m15 15 5 5M7.5 10.5h6"></path></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+      <symbol id="i-gmail" viewBox="0 0 24 24"><path d="M3.5 6.5 12 13l8.5-6.5v11a1 1 0 0 1-1 1H4.5a1 1 0 0 1-1-1z"></path><path d="M3.5 6.5 5.8 5h12.4l2.3 1.5"></path></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-3 2v-4.2A7.5 7.5 0 1 1 20 11.5Z"></path></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 8v10M6 5.2v.1M10 18v-6a4 4 0 0 1 8 0v6M10 12v6"></path></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><path d="M17.5 6.5h.01"></path></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-3H14V8.2c0-.9.3-1.5 1.6-1.5H18V4.1c-.4-.1-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H8v3h3v8"></path></symbol>
+      <symbol id="i-x-social" viewBox="0 0 24 24"><path d="M5 4 19 20M19 4 5 20"></path></symbol>
+    </defs>
+  </svg>
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Haline home">
+        <img id="brandLogo" alt="Haline logo" width="145" height="43">
+      </a>
+
+      <div class="nav-links" id="desktopNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="openSearch" type="button" aria-label="Open search" title="Search">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-search"></use></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" id="themeIcon"><use href="#i-moon"></use></svg>
+        </button>
+        <a class="btn btn-primary" href="#contact">Let's Work Together</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="container">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Let's Work Together</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Content Writer · Editorial Strategy</span>
+          <h1>Words That Connect.<br><span>Content That Converts.</span></h1>
+          <p class="hero-copy">I create clear, engaging and SEO-focused content that helps brands communicate with confidence, reach the right audience and grow online.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#portfolio">View My Work <span>→</span></a>
+            <a class="btn btn-outline" href="#contact">Let's Work Together</a>
+          </div>
+          <div class="credibility" aria-label="Writing approach">
+            <span>SEO Content</span>
+            <span>Research-Driven</span>
+            <span>Reader-Focused</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Haline editorial brand visual">
+          <div class="editorial-orbit">
+            <div class="hero-logo-card">
+              <img id="heroLogo" alt="Haline sage green wordmark">
+            </div>
+          </div>
+          <div class="floating-note one">CLARITY<small>Thoughtful structure</small></div>
+          <div class="floating-note two">PURPOSE<small>Writing with intent</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         TRUST STRIP
+         ======================================================= -->
+    <div class="trust-strip" aria-label="Content services">
+      <div class="trust-track container">
+        <div class="trust-item">CONTENT WRITING</div>
+        <div class="trust-item">SEO ARTICLES</div>
+        <div class="trust-item">WEBSITE COPY</div>
+        <div class="trust-item">CONTENT OPTIMIZATION</div>
+        <div class="trust-item">RESEARCH</div>
+      </div>
+    </div>
+
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="eyebrow">About Haline</span>
+          <p class="about-lead">Words with strategy behind them.</p>
+        </div>
+        <div class="reveal">
+          <div class="about-body">
+            <p>Haline brings writing, research, search intent, audience understanding and clear communication together to create content that feels useful to people and purposeful for brands.</p>
+            <p>The focus is simple: understand what needs to be said, who needs to hear it, and how to make the message easier to discover, understand and act on.</p>
+          </div>
+          <button class="btn btn-outline" id="aboutMoreBtn" type="button" aria-expanded="false" aria-controls="aboutExtra">Learn More</button>
+          <div class="about-extra" id="aboutExtra">
+            <div class="about-points">
+              <div class="about-point"><strong>Writing</strong><span>Clear, natural copy with a confident editorial voice.</span></div>
+              <div class="about-point"><strong>Research</strong><span>Topic exploration that supports useful, accurate content.</span></div>
+              <div class="about-point"><strong>Search Intent</strong><span>Content shaped around what readers are actually looking for.</span></div>
+              <div class="about-point"><strong>Audience</strong><span>Structure and language designed for real readers first.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SERVICES
+         ======================================================= -->
+    <section class="section-tight" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Services</span>
+          <h2>What I Can Help You Create</h2>
+          <p>Focused writing support for brands, websites and content projects that need clarity, research and purpose.</p>
+        </div>
+        <div class="services-grid stagger" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PORTFOLIO
+         ======================================================= -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Portfolio</span>
+          <h2>Selected Writing</h2>
+          <p>These are clearly labeled portfolio samples created to demonstrate writing style and approach—not claims of client work.</p>
+        </div>
+
+        <div class="portfolio-toolbar reveal">
+          <div class="filters" id="portfolioFilters" role="group" aria-label="Portfolio categories"></div>
+          <div class="search-field">
+            <label class="sr-only" for="portfolioSearch">Search my work</label>
+            <svg fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-search"></use></svg>
+            <input id="portfolioSearch" type="search" placeholder="Search my work…" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="portfolio-grid stagger" id="portfolioGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         FEATURED ARTICLE
+         ======================================================= -->
+    <section class="section-tight">
+      <div class="container">
+        <article class="featured reveal" id="featuredArticle"></article>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         WHY HALINE
+         ======================================================= -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Approach</span>
+          <h2>Why Work With Haline?</h2>
+        </div>
+        <div class="why-list reveal" id="whyList"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         WORK PROCESS
+         ======================================================= -->
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Process</span>
+          <h2>A simple process. Thoughtful work.</h2>
+        </div>
+        <div class="process-grid" id="processGrid"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         TESTIMONIALS
+         ======================================================= -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-heading reveal" style="text-align:center;margin-inline:auto">
+          <span class="eyebrow">Testimonials</span>
+          <h2>Kind words, ready for your real feedback.</h2>
+        </div>
+        <div class="testimonial-wrap reveal">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <div class="testimonial-text" id="testimonialText"></div>
+          <div class="testimonial-author" id="testimonialAuthor"></div>
+          <div class="slider-controls">
+            <button class="slider-btn" id="prevTestimonial" type="button" aria-label="Previous testimonial">←</button>
+            <div class="dots" id="testimonialDots" aria-label="Testimonial slides"></div>
+            <button class="slider-btn" id="nextTestimonial" type="button" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         FAQ
+         ======================================================= -->
+    <section class="section-tight" id="faq">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered clearly.</h2>
+        </div>
+        <div class="faq-list reveal" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         CONTACT
+         ======================================================= -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Let's Create Something Worth Reading.</h2>
+          <p>Have a project in mind? Tell me what you need and let's discuss how I can help.</p>
+          <div class="contact-links" id="contactLinks"></div>
+          <p class="form-note" style="max-width:480px">
+            Gmail, LinkedIn and Facebook are controlled from one editable <strong>SITE_CONFIG</strong> block.
+          </p>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full Name *</label>
+              <input id="fullName" name="name" type="text" autocomplete="name" required>
+              <span class="field-error" data-error-for="fullName"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <span class="field-error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="projectType">Project Type *</label>
+              <select id="projectType" name="projectType" required>
+                <option value="">Choose a project</option>
+                <option>SEO Article</option>
+                <option>Blog Post</option>
+                <option>Website Content</option>
+                <option>Product Description</option>
+                <option>SEO Optimization</option>
+                <option>Content Research</option>
+                <option>Other</option>
+              </select>
+              <span class="field-error" data-error-for="projectType"></span>
+            </div>
+            <div class="field">
+              <label for="budget">Budget *</label>
+              <select id="budget" name="budget" required>
+                <option value="">Choose a range</option>
+                <option>Under $50</option>
+                <option>$50–$100</option>
+                <option>$100–$250</option>
+                <option>$250+</option>
+              </select>
+              <span class="field-error" data-error-for="budget"></span>
+            </div>
+            <div class="field full">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" minlength="20" required placeholder="Tell me about your project, audience and what you need."></textarea>
+              <span class="field-error" data-error-for="message"></span>
+            </div>
+          </div>
+          <div class="submit-row">
+            <button class="btn btn-primary" id="submitBtn" type="submit">Send Message</button>
+            <span class="form-note">Your details are used only to respond to your project enquiry.</span>
+          </div>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img id="footerLogo" alt="Haline logo">
+          <p>Every Line, With Purpose.</p>
+        </div>
+        <div>
+          <div class="footer-title">Quick Links</div>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Connect</div>
+          <div class="socials" id="socials"></div>
+          <div class="footer-links" style="margin-top:14px" id="footerContact"></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Haline. All rights reserved.</span>
+        <span>Every Line, With Purpose.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" type="button" aria-label="Back to top" title="Back to top">
+    <svg fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <!-- =========================================================
+       SEARCH MODAL
+       ========================================================= -->
+  <div class="modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-panel search-panel" data-modal-panel>
+      <div class="search-head">
+        <h2 id="searchTitle">Search Haline</h2>
+        <button class="close-btn" type="button" data-close-modal="searchModal" aria-label="Close search">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="search-input-wrap">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-search"></use></svg>
+        <label class="sr-only" for="globalSearchInput">Search Haline</label>
+        <input id="globalSearchInput" type="search" placeholder="Search services, portfolio, FAQ…" autocomplete="off">
+      </div>
+      <div class="global-results" id="globalResults"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SERVICE MODAL
+       ========================================================= -->
+  <div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle" aria-hidden="true">
+    <div class="modal-panel" data-modal-panel>
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" id="serviceModalNumber">Service</span>
+          <h2 id="serviceModalTitle"></h2>
+        </div>
+        <button class="close-btn" type="button" data-close-modal="serviceModal" aria-label="Close service details">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="serviceModalBody"></div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="requestServiceBtn" type="button">Request This Service</button>
+        <button class="btn btn-outline" type="button" data-close-modal="serviceModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PORTFOLIO SAMPLE MODAL
+       ========================================================= -->
+  <div class="modal" id="portfolioModal" role="dialog" aria-modal="true" aria-labelledby="portfolioModalTitle" aria-hidden="true">
+    <div class="modal-panel" data-modal-panel>
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" id="portfolioModalCategory">Portfolio Sample</span>
+          <h2 id="portfolioModalTitle"></h2>
+        </div>
+        <button class="close-btn" type="button" data-close-modal="portfolioModal" aria-label="Close writing sample">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="modal-body sample-content" id="portfolioModalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================
+    // HALINE WEBSITE CONFIGURATION
+    // Edit this block first. Do not add private API keys here.
+    // =========================================================
+    // QUICK EDIT GUIDE
+    // 1) Put your real Gmail address in SITE_CONFIG.gmail.
+    // 2) Put your LinkedIn profile URL in SITE_CONFIG.linkedin.
+    // 3) Put your Facebook profile/page URL in SITE_CONFIG.facebook.
+    // 4) Add WhatsApp if you want the WhatsApp contact button.
+    // 5) Edit SERVICES, PORTFOLIO, FAQS and TESTIMONIALS below.
+    // 6) Add a real endpoint to FORM_CONFIG only when you are ready for live form delivery.
+
+    const SITE_CONFIG = {
+      // ===== BRAND =====
+      name: "Haline",
+      tagline: "Every Line, With Purpose.",
+      website: "YOUR_WEBSITE_URL",
+
+      // ===== CONTACT — EDIT THESE VALUES =====
+      gmail: "YOUR_GMAIL@gmail.com",
+      linkedin: "YOUR_LINKEDIN_URL",
+      facebook: "YOUR_FACEBOOK_URL",
+      instagram: "YOUR_INSTAGRAM_URL",
+      twitter: "YOUR_X_URL",
+      whatsapp: "YOUR_WHATSAPP_NUMBER",
+
+      // ===== OPTIONAL =====
+      ogImage: "YOUR_OG_IMAGE_URL"
+    };
+
+    const CONTACT_CONFIG = {
+      get email(){ return SITE_CONFIG.gmail; },
+      get gmail(){ return SITE_CONFIG.gmail; },
+      get linkedin(){ return SITE_CONFIG.linkedin; },
+      get facebook(){ return SITE_CONFIG.facebook; },
+      get instagram(){ return SITE_CONFIG.instagram; },
+      get twitter(){ return SITE_CONFIG.twitter; },
+      get whatsapp(){ return SITE_CONFIG.whatsapp; }
+    };
+
+    // =========================================================
+    // FORM CONFIGURATION
+    // Add your real Formspree, Web3Forms or custom backend endpoint.
+    // Leave empty until you have a real endpoint.
+    // =========================================================
+    const FORM_CONFIG = {
+      endpoint: "YOUR_FORM_ENDPOINT"
+    };
+
+    // =========================================================
+    // EDITABLE CONTENT DATA
+    // =========================================================
+    const SERVICES = [
+      {
+        number:"01", icon:"pen", title:"SEO Blog Writing",
+        description:"Well-structured blog articles designed to be useful for readers and aligned with search intent.",
+        fullDescription:"SEO blog writing combines thoughtful research, a clear editorial structure and search-aware content planning. The goal is not to stuff keywords—it is to make the article genuinely useful while giving search engines a clear understanding of the topic.",
+        benefits:["Clear reader-first structure","Search-aware topic coverage","Natural keyword integration","Polished, easy-to-read copy"],
+        deliverables:["Article outline","SEO-focused draft","Headline and subheading structure","Final edited copy"]
+      },
+      {
+        number:"02", icon:"globe", title:"Website Content",
+        description:"Confident, concise website copy that helps visitors understand what you offer and why it matters.",
+        fullDescription:"Website content should make a brand easier to understand. I create pages with a clear hierarchy, audience-aware messaging and strong calls to action without making the copy feel pushy.",
+        benefits:["Clear brand messaging","Reader-friendly page structure","Purposeful calls to action","Consistent editorial tone"],
+        deliverables:["Page copy","Headlines and subheadings","CTA copy","Content structure suggestions"]
+      },
+      {
+        number:"03", icon:"file", title:"Article Writing",
+        description:"Research-led long-form articles written with clarity, flow and a professional editorial voice.",
+        fullDescription:"Article writing focuses on depth, readability and useful information. Each piece is shaped around its intended audience and purpose, with research supporting the story rather than overwhelming it.",
+        benefits:["Strong narrative flow","Research-backed information","Logical sectioning","Clean, professional voice"],
+        deliverables:["Article outline","Long-form article","Headline options","Edited final copy"]
+      },
+      {
+        number:"04", icon:"search-doc", title:"SEO Content Optimization",
+        description:"Improve existing content with clearer structure, stronger relevance and better search-focused presentation.",
+        fullDescription:"Content optimization is about making an existing piece more useful and easier to understand. I review structure, headings, readability, metadata opportunities and topical coverage to identify practical improvements.",
+        benefits:["Improved content clarity","Better heading hierarchy","Search-intent alignment","Readability improvements"],
+        deliverables:["Content review","Optimization recommendations","Revised sections","Metadata suggestions"]
+      },
+      {
+        number:"05", icon:"box", title:"Product Descriptions",
+        description:"Specific, engaging product copy that explains value without relying on exaggerated claims.",
+        fullDescription:"Product descriptions should answer the questions a buyer has while keeping the brand voice consistent. I focus on clarity, benefits, useful details and natural persuasive language.",
+        benefits:["Feature-to-benefit writing","Scannable structure","Consistent brand voice","Reader-focused wording"],
+        deliverables:["Product descriptions","Short and long variants","Feature highlights","CTA suggestions"]
+      },
+      {
+        number:"06", icon:"search-doc", title:"Content Research",
+        description:"A practical research layer that gives your content a stronger foundation before writing begins.",
+        fullDescription:"Content research can cover the topic landscape, search intent, audience questions, competing content patterns and useful subtopics. The output can then guide a writer or support the full content project.",
+        benefits:["Organized topic research","Audience question discovery","Search-intent notes","Content opportunity mapping"],
+        deliverables:["Research brief","Topic/subtopic list","Search-intent notes","Source and angle suggestions"]
+      }
+    ];
+
+    const PORTFOLIO = [
+      {
+        id:1, category:"SEO Articles", title:"A Practical Guide to Building a Better Content Strategy",
+        description:"Portfolio Sample — an educational SEO article focused on turning scattered ideas into a repeatable content system.",
+        tags:["strategy","SEO","research"],
+        content:[
+          ["Opening","A useful content strategy starts with a simple question: what should this piece help the reader understand, decide or do? Once that purpose is clear, the rest of the process becomes easier to organize."],
+          ["Start With the Reader","Instead of beginning with a list of keywords, begin with the audience. What problem are they trying to solve? What information would make the next step easier? These questions create a stronger foundation for the article."],
+          ["Build a Clear Structure","A good structure gives readers landmarks. Use a focused introduction, descriptive subheadings and sections that each answer one clear question. Remove anything that does not support the central purpose."],
+          ["Refine Before Publishing","Research, readability and search considerations should work together. Review the draft for accuracy, flow, repetition and clarity before publishing."],
+          ["Closing","Strong content does not need to sound complicated. It needs to be useful, organized and written with the reader in mind."]
+        ]
+      },
+      {
+        id:2, category:"Blog Posts", title:"Why Clear Writing Makes Complex Ideas Easier",
+        description:"Portfolio Sample — a conversational blog post about clarity, structure and reader trust.",
+        tags:["writing","clarity","blog"],
+        content:[
+          ["The Clarity Problem","Complex subjects become harder to understand when the writing tries to sound more complicated than the idea itself. Clear writing respects the reader's attention."],
+          ["One Idea at a Time","A paragraph becomes easier to follow when it has one central job. Introduce the idea, explain it, add useful context and then move forward."],
+          ["Use Specific Language","Specific nouns and active verbs often create stronger sentences than vague business language. The reader should not have to decode what a sentence means."],
+          ["Make the Next Step Obvious","Good blog writing leaves the reader with a clear takeaway. It can be a new understanding, a practical tip or a question worth exploring next."]
+        ]
+      },
+      {
+        id:3, category:"Website Copy", title:"Homepage Copy for a Modern Creative Studio",
+        description:"Portfolio Sample — a homepage messaging exercise built around clarity and conversion.",
+        tags:["website","copy","conversion"],
+        content:[
+          ["Hero","Your ideas deserve a clearer place to land. We turn creative direction into thoughtful digital experiences that are easy to understand and designed around the people you want to reach."],
+          ["What We Do","From positioning and messaging to launch-ready website copy, every piece is shaped around one purpose: helping the right audience understand the value quickly."],
+          ["Why It Matters","A strong homepage should answer three questions early: what is this, who is it for and why should I care? The rest of the page can then build context and trust."],
+          ["CTA","Have an idea worth building? Let’s turn it into a message people can understand."]
+        ]
+      },
+      {
+        id:4, category:"Product Content", title:"Product Description: A Minimal Everyday Notebook",
+        description:"Portfolio Sample — product copy showing features through practical reader benefits.",
+        tags:["product","ecommerce","copy"],
+        content:[
+          ["Overview","A simple notebook for ideas that need a place to become real. Its clean format keeps attention on the page, whether you are planning, sketching or capturing quick notes."],
+          ["Details","Designed for everyday use, the notebook gives you a flexible space for lists, reflections and project notes without unnecessary visual distractions."],
+          ["Why It Works","The best product copy helps a reader imagine using the product. It connects the feature to the moment when that feature becomes useful."]
+        ]
+      },
+      {
+        id:5, category:"SEO Optimization", title:"Before & After: Improving an Educational Article",
+        description:"Portfolio Sample — a content optimization exercise showing structural improvements rather than a real client result.",
+        tags:["optimization","structure","SEO"],
+        content:[
+          ["Before","The original concept used long paragraphs, generic headings and several ideas in the same section. Important information was present, but it was difficult to scan."],
+          ["After","The revised structure separates the main questions, uses descriptive headings and turns dense paragraphs into shorter sections where appropriate."],
+          ["Optimization Notes","The goal is not to change a piece simply to make it longer. The goal is to make the information easier to discover, understand and use."]
+        ]
+      },
+      {
+        id:6, category:"SEO Articles", title:"Search Intent: A Reader-First Explanation",
+        description:"Portfolio Sample — a beginner-friendly article explaining how search intent influences content decisions.",
+        tags:["search intent","SEO","education"],
+        content:[
+          ["What Search Intent Means","Search intent is the underlying reason someone makes a search. They may want to learn, compare options, find a specific page or take an action."],
+          ["Why It Changes the Content","If the reader wants a definition, a long sales page may not answer the need. If the reader is comparing options, a purely introductory article may feel incomplete."],
+          ["Use Intent as a Planning Tool","Before writing, identify the question behind the query. Then choose a format and structure that can answer it directly and thoroughly."],
+          ["A Better Reader Experience","When content matches the reader's purpose, the article becomes more useful. That usefulness is the foundation of good search-focused writing."]
+        ]
+      }
+    ];
+
+    const FEATURED_ARTICLE = {
+      category:"SEO Article",
+      title:"[Editable Featured Article Title]",
+      description:"[Editable featured article description. Replace this text with your own published or portfolio sample description.]",
+      content:"[Editable featured article content. Keep this field short here, or connect the button to a real article URL in the configuration if you later add one.]"
+    };
+
+    const WHY_REASONS = [
+      ["01","Reader-Focused Writing","Content is shaped around what the audience needs to understand, not just what a brand wants to say."],
+      ["02","SEO-Aware Content","Search considerations are integrated naturally into planning, structure and wording."],
+      ["03","Thorough Research","Research gives each piece a stronger foundation and helps avoid shallow, repetitive content."],
+      ["04","Clear Structure","Headings, paragraphs and transitions make information easier to scan and follow."],
+      ["05","Original Content","Every sample is written from scratch with an emphasis on useful, purposeful communication."],
+      ["06","Professional Communication","Clear expectations, organized feedback and straightforward communication support a smoother project."]
+    ];
+
+    const PROCESS = [
+      ["01","DISCOVER","Understand the audience, topic and goal."],
+      ["02","RESEARCH","Research the topic, search intent and relevant information."],
+      ["03","WRITE","Create clear, engaging and structured content."],
+      ["04","REFINE","Edit, optimize and polish the final piece."]
+    ];
+
+    const TESTIMONIALS = [
+      {quote:"Client testimonial placeholder. Replace this with a real testimonial when you have permission to publish it.",author:"Real client name · Role / Company"},
+      {quote:"Client testimonial placeholder. Replace this with a real testimonial when you have permission to publish it.",author:"Real client name · Role / Company"},
+      {quote:"Client testimonial placeholder. Replace this with a real testimonial when you have permission to publish it.",author:"Real client name · Role / Company"}
+    ];
+
+    const FAQS = [
+      ["What types of content do you write?","I write SEO articles, blog posts, website content, product descriptions and research-led content. The service mix can be edited in the SERVICES array."],
+      ["Do you provide SEO-optimized articles?","Yes. SEO considerations can be built into topic planning, search intent, structure, headings, readability and natural keyword use."],
+      ["Can you optimize existing content?","Yes. Existing content can be reviewed for structure, clarity, relevance, readability and search-focused opportunities."],
+      ["How do you research topics?","Research can include the topic landscape, audience questions, search intent, competing content patterns and useful supporting information."],
+      ["Can you write for different industries?","Yes, provided the project brief gives enough context about the audience, subject, goals and preferred voice. Specialized claims should be supported by appropriate source material."],
+      ["How can I hire Haline?","Use the contact form on this page, or use the configured email/WhatsApp links. Replace the placeholders in SITE_CONFIG before publishing."]
+    ];
+
+    // =========================================================
+    // EMBEDDED SAGE LOGO
+    // The original blue mark was converted to dark sage green
+    // and the original tagline beneath the wordmark was removed.
+    // =========================================================
+    const HALINE_LOGO = "data:image/png;base64,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";
+
+    // =========================================================
+    // UTILITY HELPERS
+    // =========================================================
+    const $ = (selector, root=document) => root.querySelector(selector);
+    const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+    const icon = (name, attrs='') => `<svg ${attrs}><use href="#i-${name}"></use></svg>`;
+    const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[char]));
+    const isPlaceholder = value => !value || /^YOUR_/i.test(value);
+    const isExternalUrl = value => /^https?:\/\//i.test(value);
+
+    // =========================================================
+    // LOGO / CONFIG INITIALIZATION
+    // =========================================================
+    function initBrand(){
+      ["brandLogo","heroLogo","footerLogo"].forEach(id => {
+        const image = document.getElementById(id);
+        if(image) image.src = HALINE_LOGO;
+      });
+      document.title = `${SITE_CONFIG.name} | Content Writer & SEO Article Writer`;
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if(canonical && !isPlaceholder(SITE_CONFIG.website)) canonical.href = SITE_CONFIG.website;
+      updateStructuredData();
+    }
+
+    function updateStructuredData(){
+      const sameAs = ["linkedin","instagram","facebook","twitter"]
+        .map(key => SITE_CONFIG[key])
+        .filter(value => !isPlaceholder(value) && isExternalUrl(value));
+      const data = {
+        "@context":"https://schema.org",
+        "@type":"Person",
+        "name":SITE_CONFIG.name,
+        "url":isPlaceholder(SITE_CONFIG.website) ? undefined : SITE_CONFIG.website,
+        "email":isPlaceholder(SITE_CONFIG.gmail) ? undefined : SITE_CONFIG.gmail,
+        "jobTitle":"Content Writer & SEO Article Writer",
+        "sameAs":sameAs
+      };
+      Object.keys(data).forEach(key => data[key] === undefined && delete data[key]);
+      $("#structuredData").textContent = JSON.stringify(data, null, 2);
+    }
+
+    // =========================================================
+    // SERVICES RENDERING + MODAL
+    // =========================================================
+    function renderServices(){
+      const grid = $("#servicesGrid");
+      grid.innerHTML = SERVICES.length ? SERVICES.map((service,index) => `
+        <article class="service-card" data-service-id="${index}">
+          <span class="service-number">${escapeHTML(service.number)}</span>
+          <div class="service-icon" aria-hidden="true">${icon(service.icon,'fill="none" stroke="currentColor" stroke-width="1.7"')}</div>
+          <h3>${escapeHTML(service.title)}</h3>
+          <p>${escapeHTML(service.description)}</p>
+          <button class="text-btn service-more" type="button" data-service-index="${index}">Learn More</button>
+        </article>
+      `).join("") : `<div class="empty-state">Services will appear here once you add them to the SERVICES array.</div>`;
+    }
+
+    function openService(index){
+      const service = SERVICES[index];
+      if(!service) return;
+      $("#serviceModalNumber").textContent = `${service.number} · Service`;
+      $("#serviceModalTitle").textContent = service.title;
+      $("#serviceModalBody").innerHTML = `
+        <p>${escapeHTML(service.fullDescription)}</p>
+        <h3>Benefits</h3>
+        <ul>${service.benefits.map(item => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
+        <h3>Typical Deliverables</h3>
+        <ul>${service.deliverables.map(item => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
+      `;
+      $("#requestServiceBtn").dataset.serviceTitle = service.title;
+      openModal("serviceModal");
+    }
+
+    // =========================================================
+    // PORTFOLIO FILTER + SEARCH + MODAL
+    // =========================================================
+    const PORTFOLIO_CATEGORIES = ["All","SEO Articles","Blog Posts","Website Copy","Product Content","SEO Optimization"];
+    let portfolioState = {category:"All",query:""};
+
+    function renderPortfolioFilters(){
+      $("#portfolioFilters").innerHTML = PORTFOLIO_CATEGORIES.map(category => `
+        <button class="filter-btn ${category === "All" ? "active":""}" type="button" data-category="${escapeHTML(category)}" aria-pressed="${category==="All"}">${escapeHTML(category)}</button>
+      `).join("");
+    }
+
+    function getFilteredPortfolio(){
+      const query = portfolioState.query.trim().toLowerCase();
+      return PORTFOLIO.filter(item => {
+        const categoryMatch = portfolioState.category === "All" || item.category === portfolioState.category;
+        const haystack = [item.title,item.category,item.description,item.tags.join(" "),item.content.map(part => part.join(" ")).join(" ")]
+          .join(" ").toLowerCase();
+        return categoryMatch && (!query || haystack.includes(query));
+      });
+    }
+
+    function renderPortfolio(){
+      const grid = $("#portfolioGrid");
+      const items = getFilteredPortfolio();
+      if(!items.length){
+        grid.innerHTML = `<div class="empty-state">No projects found.</div>`;
+        return;
+      }
+      grid.innerHTML = items.map(item => `
+        <article class="portfolio-card">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">PORTFOLIO SAMPLE · ${escapeHTML(item.category)}</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>${escapeHTML(item.title)}</h3>
+            <p>${escapeHTML(item.description)}</p>
+            <div class="portfolio-meta">${escapeHTML(item.tags.join(" · "))}</div>
+            <button class="text-btn portfolio-more" type="button" data-portfolio-id="${item.id}" style="margin-top:17px">Read Sample</button>
+          </div>
+        </article>
+      `).join("");
+      requestAnimationFrame(() => {
+        grid.classList.add("is-visible");
+      });
+    }
+
+    function openPortfolio(id){
+      const item = PORTFOLIO.find(project => project.id === Number(id));
+      if(!item) return;
+      $("#portfolioModalCategory").textContent = `Portfolio Sample · ${item.category}`;
+      $("#portfolioModalTitle").textContent = item.title;
+      $("#portfolioModalBody").innerHTML = `
+        <p><strong>${escapeHTML(item.description)}</strong></p>
+        ${item.content.map(([heading,paragraph]) => `
+          <h3>${escapeHTML(heading)}</h3>
+          <p>${escapeHTML(paragraph)}</p>
+        `).join("")}
+      `;
+      openModal("portfolioModal");
+    }
+
+    // =========================================================
+    // FEATURED ARTICLE
+    // =========================================================
+    function renderFeatured(){
+      $("#featuredArticle").innerHTML = `
+        <div>
+          <span class="featured-category">${escapeHTML(FEATURED_ARTICLE.category)}</span>
+          <h2>${escapeHTML(FEATURED_ARTICLE.title)}</h2>
+          <p>${escapeHTML(FEATURED_ARTICLE.description)}</p>
+        </div>
+        <button class="btn btn-primary" id="readFeaturedBtn" type="button">Read Featured Article <span>→</span></button>
+      `;
+    }
+
+    function openFeatured(){
+      $("#portfolioModalCategory").textContent = `Featured Article · ${FEATURED_ARTICLE.category}`;
+      $("#portfolioModalTitle").textContent = FEATURED_ARTICLE.title;
+      $("#portfolioModalBody").innerHTML = `
+        <p>${escapeHTML(FEATURED_ARTICLE.description)}</p>
+        <h3>Editable Content</h3>
+        <p>${escapeHTML(FEATURED_ARTICLE.content)}</p>
+      `;
+      openModal("portfolioModal");
+    }
+
+    // =========================================================
+    // WHY + PROCESS
+    // =========================================================
+    function renderWhy(){
+      $("#whyList").innerHTML = WHY_REASONS.map(([num,title,desc]) => `
+        <div class="why-row">
+          <span class="why-num">${num}</span>
+          <h3>${escapeHTML(title)}</h3>
+          <p>${escapeHTML(desc)}</p>
+        </div>
+      `).join("");
+    }
+
+    function renderProcess(){
+      $("#processGrid").innerHTML = PROCESS.map(([num,title,desc],index) => `
+        <article class="process-step reveal" style="transition-delay:${index*70}ms">
+          <div class="num">${num}</div>
+          <h3>${escapeHTML(title)}</h3>
+          <p>${escapeHTML(desc)}</p>
+        </article>
+      `).join("");
+    }
+
+    // =========================================================
+    // TESTIMONIAL SLIDER
+    // =========================================================
+    let testimonialIndex = 0;
+    function renderTestimonials(){
+      const safeIndex = Math.max(0, Math.min(testimonialIndex, TESTIMONIALS.length - 1));
+      testimonialIndex = safeIndex;
+      const current = TESTIMONIALS[safeIndex];
+      $("#testimonialText").textContent = current?.quote || "Add your first testimonial to the TESTIMONIALS array.";
+      $("#testimonialAuthor").textContent = current?.author || "";
+      $("#testimonialDots").innerHTML = TESTIMONIALS.map((_,i) => `
+        <button class="dot ${i===safeIndex?"active":""}" type="button" aria-label="Go to testimonial ${i+1}" data-testimonial-index="${i}"></button>
+      `).join("");
+    }
+
+    // =========================================================
+    // FAQ ACCORDION
+    // =========================================================
+    function renderFaqs(){
+      $("#faqList").innerHTML = FAQS.map((faq,index) => `
+        <div class="faq-item" data-faq-index="${index}">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-${index}" id="faq-question-${index}">
+            <span>${escapeHTML(faq[0])}</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-${index}" role="region" aria-labelledby="faq-question-${index}">
+            <div><p>${escapeHTML(faq[1])}</p></div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function toggleFaq(index){
+      const item = $(`.faq-item[data-faq-index="${index}"]`);
+      if(!item) return;
+      const willOpen = !item.classList.contains("open");
+      $$(".faq-item").forEach(other => {
+        other.classList.remove("open");
+        const button = $(".faq-question", other);
+        button?.setAttribute("aria-expanded","false");
+      });
+      if(willOpen){
+        item.classList.add("open");
+        $(".faq-question",item)?.setAttribute("aria-expanded","true");
+      }
+    }
+
+    // =========================================================
+    // CONTACT LINKS
+    // =========================================================
+    function renderContactLinks(){
+      const links = [];
+
+      if(!isPlaceholder(CONTACT_CONFIG.gmail)){
+        const gmail = CONTACT_CONFIG.gmail.trim();
+        const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(gmail)}`;
+        links.push(`
+          <a class="contact-link" href="${gmailCompose}" target="_blank" rel="noopener noreferrer" aria-label="Email Haline via Gmail">
+            ${icon("gmail",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>Gmail</strong><small>${escapeHTML(gmail)}</small></span>
+            <span class="contact-link-copy">Open</span>
+          </a>`);
+      } else {
+        links.push(`
+          <button class="contact-link disabled" type="button" disabled title="Add your Gmail address in SITE_CONFIG">
+            ${icon("gmail",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>Gmail</strong><small>Add your Gmail address in SITE_CONFIG</small></span>
+          </button>`);
+      }
+
+      if(!isPlaceholder(CONTACT_CONFIG.linkedin)){
+        links.push(`
+          <a class="contact-link" href="${escapeHTML(CONTACT_CONFIG.linkedin)}" target="_blank" rel="noopener noreferrer" aria-label="Open Haline on LinkedIn">
+            ${icon("linkedin",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>LinkedIn</strong><small>Professional profile</small></span>
+            <span class="contact-link-copy">Open</span>
+          </a>`);
+      } else {
+        links.push(`
+          <button class="contact-link disabled" type="button" disabled title="Add your LinkedIn URL in SITE_CONFIG">
+            ${icon("linkedin",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>LinkedIn</strong><small>Add your profile URL in SITE_CONFIG</small></span>
+          </button>`);
+      }
+
+      if(!isPlaceholder(CONTACT_CONFIG.facebook)){
+        links.push(`
+          <a class="contact-link" href="${escapeHTML(CONTACT_CONFIG.facebook)}" target="_blank" rel="noopener noreferrer" aria-label="Open Haline on Facebook">
+            ${icon("facebook",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>Facebook</strong><small>Social profile</small></span>
+            <span class="contact-link-copy">Open</span>
+          </a>`);
+      } else {
+        links.push(`
+          <button class="contact-link disabled" type="button" disabled title="Add your Facebook URL in SITE_CONFIG">
+            ${icon("facebook",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>Facebook</strong><small>Add your profile URL in SITE_CONFIG</small></span>
+          </button>`);
+      }
+
+      if(!isPlaceholder(CONTACT_CONFIG.whatsapp)){
+        const number = CONTACT_CONFIG.whatsapp.replace(/[^\d]/g,"");
+        links.push(`
+          <a class="contact-link" target="_blank" rel="noopener noreferrer" href="https://wa.me/${encodeURIComponent(number)}" aria-label="Chat with Haline on WhatsApp">
+            ${icon("message",'fill="none" stroke="currentColor" stroke-width="1.7"')}
+            <span><strong>WhatsApp</strong><small>Quick project chat</small></span>
+            <span class="contact-link-copy">Chat</span>
+          </a>`);
+      }
+
+      $("#contactLinks").innerHTML = links.join("");
+    }
+
+    function renderSocials(){
+      const items = [
+        ["linkedin","LinkedIn","linkedin"],
+        ["instagram","Instagram","instagram"],
+        ["twitter","X","x-social"],
+        ["facebook","Facebook","facebook"]
+      ];
+      $("#socials").innerHTML = items.filter(([key]) => !isPlaceholder(SITE_CONFIG[key])).map(([key,label,iconName]) => `
+        <a class="social" href="${escapeHTML(SITE_CONFIG[key])}" target="_blank" rel="noopener noreferrer" aria-label="${label}">
+          ${icon(iconName,'fill="none" stroke="currentColor" stroke-width="1.7"')}
+        </a>
+      `).join("");
+
+      $("#footerContact").innerHTML = !isPlaceholder(CONTACT_CONFIG.gmail)
+        ? `<a href="mailto:${encodeURIComponent(CONTACT_CONFIG.gmail)}">${escapeHTML(CONTACT_CONFIG.gmail)}</a>`
+        : `<span style="color:var(--muted);font-size:.82rem">Add Gmail in SITE_CONFIG</span>`;
+    }
+
+    // =========================================================
+    // MODAL CONTROLS / ACCESSIBILITY
+    // =========================================================
+    let lastFocusedElement = null;
+
+    function openModal(id){
+      const modal = document.getElementById(id);
+      if(!modal) return;
+      lastFocusedElement = document.activeElement;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("modal-open");
+      const focusTarget = $("input,button,[href],select,textarea", modal);
+      setTimeout(() => focusTarget?.focus(), 20);
+    }
+
+    function closeModal(id){
+      const modal = document.getElementById(id);
+      if(!modal) return;
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      if(!$(".modal.open")) document.body.classList.remove("modal-open");
+      lastFocusedElement?.focus?.();
+    }
+
+    function closeAllModals(){
+      $$(".modal.open").forEach(modal => closeModal(modal.id));
+    }
+
+    // =========================================================
+    // GLOBAL SEARCH
+    // =========================================================
+    function buildSearchIndex(){
+      const items = [];
+      SERVICES.forEach((item,index) => items.push({
+        category:"Service",title:item.title,description:item.description,
+        action:()=>openService(index)
+      }));
+      PORTFOLIO.forEach(item => items.push({
+        category:"Portfolio",title:item.title,description:item.description,
+        action:()=>openPortfolio(item.id)
+      }));
+      FAQS.forEach(item => items.push({
+        category:"FAQ",title:item[0],description:item[1],
+        action:()=>{
+          closeModal("searchModal");
+          document.getElementById("faq")?.scrollIntoView({behavior:"smooth"});
+          const index = FAQS.indexOf(item);
+          setTimeout(()=>toggleFaq(index),450);
+        }
+      }));
+      return items;
+    }
+
+    const SEARCH_INDEX = buildSearchIndex();
+
+    function renderSearchResults(query=""){
+      const q = query.trim().toLowerCase();
+      const results = SEARCH_INDEX.filter(item => !q || `${item.title} ${item.description} ${item.category}`.toLowerCase().includes(q));
+      $("#globalResults").innerHTML = results.length
+        ? results.map((item,index) => `
+          <button class="result-item" type="button" data-search-index="${index}">
+            <span class="result-icon">${icon("search-doc",'fill="none" stroke="currentColor" stroke-width="1.7"')}</span>
+            <span><small>${escapeHTML(item.category)}</small><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.description)}</span></span>
+          </button>
+        `).join("")
+        : `<div class="no-results">No results found.</div>`;
+      $("#globalResults")._currentResults = results;
+    }
+
+    // =========================================================
+    // DARK / LIGHT MODE WITH LOCAL STORAGE
+    // =========================================================
+    function getPreferredTheme(){
+      const stored = localStorage.getItem("haline-theme");
+      if(stored === "light" || stored === "dark") return stored;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    function setTheme(theme){
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem("haline-theme", theme);
+      const use = $("#themeIcon use");
+      if(use) use.setAttribute("href", theme === "dark" ? "#i-sun" : "#i-moon");
+      $("#themeToggle")?.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
+
+    // =========================================================
+    // MOBILE NAVIGATION
+    // =========================================================
+    function setMobileMenu(open){
+      const menu = $("#mobileMenu");
+      const toggle = $("#menuToggle");
+      menu.classList.toggle("open",open);
+      menu.setAttribute("aria-hidden",String(!open));
+      toggle.setAttribute("aria-expanded",String(open));
+      toggle.setAttribute("aria-label",open ? "Close menu" : "Open menu");
+      toggle.querySelector("use")?.setAttribute("href",open ? "#i-x" : "#i-menu");
+    }
+
+    // =========================================================
+    // CONTACT VALIDATION + REAL ENDPOINT HANDOFF
+    // =========================================================
+    function setFieldError(id,message){
+      const field = document.getElementById(id);
+      const error = document.querySelector(`[data-error-for="${id}"]`);
+      if(error) error.textContent = message || "";
+      if(field){
+        field.setAttribute("aria-invalid",message ? "true":"false");
+      }
+    }
+
+    function validateForm(){
+      const values = {
+        fullName: $("#fullName").value.trim(),
+        email: $("#email").value.trim(),
+        projectType: $("#projectType").value,
+        budget: $("#budget").value,
+        message: $("#message").value.trim()
+      };
+      let valid = true;
+      setFieldError("fullName","");
+      setFieldError("email","");
+      setFieldError("projectType","");
+      setFieldError("budget","");
+      setFieldError("message","");
+
+      if(!values.fullName){
+        setFieldError("fullName","Please enter your name."); valid=false;
+      }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)){
+        setFieldError("email","Please enter a valid email address."); valid=false;
+      }
+      if(!values.projectType){
+        setFieldError("projectType","Please choose a project type."); valid=false;
+      }
+      if(!values.budget){
+        setFieldError("budget","Please choose a budget range."); valid=false;
+      }
+      if(!values.message){
+        setFieldError("message","Please enter your message."); valid=false;
+      } else if(values.message.length < 20){
+        setFieldError("message","Please write at least 20 characters."); valid=false;
+      }
+      return valid;
+    }
+
+    async function submitForm(event){
+      event.preventDefault();
+      const status = $("#formStatus");
+      status.className = "form-status";
+      status.textContent = "";
+      if(!validateForm()){
+        const firstError = $(".field [aria-invalid='true']");
+        firstError?.focus();
+        return;
+      }
+
+      if(isPlaceholder(FORM_CONFIG.endpoint)){
+        status.className = "form-status show info";
+        status.textContent = "Form endpoint not configured. Add your real Formspree, Web3Forms or custom backend endpoint in FORM_CONFIG before using live submissions.";
+        return;
+      }
+
+      const button = $("#submitBtn");
+      const originalText = button.textContent;
+      button.disabled = true;
+      button.textContent = "Sending…";
+      status.className = "form-status show info";
+      status.textContent = "Sending…";
+
+      try{
+        const formData = new FormData($("#contactForm"));
+        const response = await fetch(FORM_CONFIG.endpoint,{
+          method:"POST",
+          body:formData,
+          headers:{Accept:"application/json"}
+        });
+        if(!response.ok) throw new Error("Submission failed");
+        $("#contactForm").reset();
+        status.className = "form-status show success";
+        status.textContent = "Thank you! Your message has been received.";
+      }catch(error){
+        status.className = "form-status show error";
+        status.textContent = "The form could not be submitted. Please check your endpoint configuration or use the email contact option.";
+      }finally{
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    }
+
+    // =========================================================
+    // SCROLL / ACTIVE NAV / BACK TO TOP
+    // =========================================================
+    function handleScroll(){
+      const header = $("#siteHeader");
+      const backTop = $("#backTop");
+      header.classList.toggle("scrolled",window.scrollY > 12);
+      backTop.classList.toggle("visible",window.scrollY > 600);
+
+      const sections = ["home","about","services","portfolio","contact"];
+      let current = "home";
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if(el && window.scrollY >= el.offsetTop - 150) current = id;
+      });
+      $$(".nav-links a").forEach(link => link.classList.toggle("active",link.getAttribute("href") === `#${current}`));
+    }
+
+    // =========================================================
+    // INTERSECTION OBSERVER
+    // =========================================================
+    function initRevealObserver(){
+      if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+        $$(".reveal,.stagger,.process-step").forEach(el=>el.classList.add("is-visible"));
+        return;
+      }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },{threshold:.12});
+      $$(".reveal,.stagger,.process-step").forEach(el=>observer.observe(el));
+    }
+
+    // =========================================================
+    // EVENT DELEGATION
+    // =========================================================
+    document.addEventListener("click", event => {
+      const serviceButton = event.target.closest(".service-more");
+      if(serviceButton) openService(Number(serviceButton.dataset.serviceIndex));
+
+      const portfolioButton = event.target.closest(".portfolio-more");
+      if(portfolioButton) openPortfolio(Number(portfolioButton.dataset.portfolioId));
+
+      const filter = event.target.closest(".filter-btn");
+      if(filter){
+        portfolioState.category = filter.dataset.category;
+        $$(".filter-btn").forEach(btn => {
+          const active = btn === filter;
+          btn.classList.toggle("active",active);
+          btn.setAttribute("aria-pressed",String(active));
+        });
+        renderPortfolio();
+      }
+
+      const faqButton = event.target.closest(".faq-question");
+      if(faqButton) toggleFaq(Number(faqButton.closest(".faq-item").dataset.faqIndex));
+
+      const result = event.target.closest(".result-item");
+      if(result){
+        const results = $("#globalResults")._currentResults || [];
+        results[Number(result.dataset.searchIndex)]?.action?.();
+      }
+
+      const dot = event.target.closest(".dot");
+      if(dot){
+        testimonialIndex = Number(dot.dataset.testimonialIndex);
+        renderTestimonials();
+      }
+
+      const closeButton = event.target.closest("[data-close-modal]");
+      if(closeButton) closeModal(closeButton.dataset.closeModal);
+
+      const featured = event.target.closest("#readFeaturedBtn");
+      if(featured) openFeatured();
+    });
+
+    // Close modal by clicking the overlay, not the panel.
+    $$(".modal").forEach(modal => {
+      modal.addEventListener("click", event => {
+        if(event.target === modal) closeModal(modal.id);
+      });
+    });
+
+    // =========================================================
+    // INITIALIZATION
+    // =========================================================
+    document.addEventListener("DOMContentLoaded", () => {
+      initBrand();
+      renderServices();
+      renderPortfolioFilters();
+      renderPortfolio();
+      renderFeatured();
+      renderWhy();
+      renderProcess();
+      renderTestimonials();
+      renderFaqs();
+      renderContactLinks();
+      renderSocials();
+      renderSearchResults();
+      setTheme(getPreferredTheme());
+      initRevealObserver();
+      handleScroll();
+
+      $("#themeToggle").addEventListener("click",() => {
+        setTheme(document.documentElement.dataset.theme === "dark" ? "light":"dark");
+      });
+
+      $("#openSearch").addEventListener("click",() => {
+        openModal("searchModal");
+        renderSearchResults($("#globalSearchInput").value);
+      });
+
+      $("#globalSearchInput").addEventListener("input",event => renderSearchResults(event.target.value));
+      $("#portfolioSearch").addEventListener("input",event => {
+        portfolioState.query = event.target.value;
+        renderPortfolio();
+      });
+
+      $("#menuToggle").addEventListener("click",() => {
+        const open = !$("#mobileMenu").classList.contains("open");
+        setMobileMenu(open);
+      });
+
+      $$("#mobileMenu a").forEach(link => link.addEventListener("click",() => setMobileMenu(false)));
+
+      $("#aboutMoreBtn").addEventListener("click",() => {
+        const extra = $("#aboutExtra");
+        const open = extra.classList.toggle("open");
+        $("#aboutMoreBtn").setAttribute("aria-expanded",String(open));
+        $("#aboutMoreBtn").textContent = open ? "Show Less" : "Learn More";
+      });
+
+      $("#requestServiceBtn").addEventListener("click",() => {
+        closeModal("serviceModal");
+        $("#contact").scrollIntoView({behavior:"smooth"});
+        setTimeout(() => {
+          const projectType = $("#projectType");
+          const title = $("#requestServiceBtn").dataset.serviceTitle;
+          const match = [...projectType.options].find(option => option.text.toLowerCase().includes(String(title).toLowerCase().replace("writing","").trim()));
+          if(match) projectType.value = match.value;
+        },450);
+      });
+
+      $("#prevTestimonial").addEventListener("click",() => {
+        if(!TESTIMONIALS.length) return;
+        testimonialIndex = (testimonialIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
+        renderTestimonials();
+      });
+
+      $("#nextTestimonial").addEventListener("click",() => {
+        if(!TESTIMONIALS.length) return;
+        testimonialIndex = (testimonialIndex + 1) % TESTIMONIALS.length;
+        renderTestimonials();
+      });
+
+      $("#contactForm").addEventListener("submit",submitForm);
+
+      $("#backTop").addEventListener("click",() => window.scrollTo({top:0,behavior:"smooth"}));
+
+      window.addEventListener("scroll",handleScroll,{passive:true});
+
+      // Keyboard support: ESC closes menus/modals; modal focus remains recoverable.
+      document.addEventListener("keydown",event => {
+        if(event.key === "Escape"){
+          closeAllModals();
+          setMobileMenu(false);
+        }
+        if(event.key === "ArrowLeft" && document.activeElement === $("#prevTestimonial")) $("#prevTestimonial").click();
+        if(event.key === "ArrowRight" && document.activeElement === $("#nextTestimonial")) $("#nextTestimonial").click();
+      });
+
+      // Keep system theme changes responsive only when the visitor has not chosen a saved theme.
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",event => {
+        if(!localStorage.getItem("haline-theme")) setTheme(event.matches ? "dark":"light");
+      });
+    });
+  </script>
+</body>
+</html>
